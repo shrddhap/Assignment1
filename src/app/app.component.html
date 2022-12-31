@@ -1,0 +1,48 @@
+<h2>ADDDDD</h2>
+
+<div class="container">
+
+  <button
+    type="submit"
+    (click)="addnewdata()"
+    style="margin-top: 5%; margin-left: 90%"
+  >
+    ADD
+  </button>
+    <form [formGroup]="dataform" *ngIf="showform" >
+        <h5>Add data</h5>
+      <label>Title:</label>
+      <div>
+        <input
+          type="text"
+          placeholder="title"
+          formControlName="title"
+        />
+      </div>
+      <label>Body:</label>
+      <div>
+        <input
+          type="text"
+          placeholder="body"
+          formControlName="body"
+        />
+      </div>
+      <br />
+      <button (click)="newdata(data)">save</button>
+    </form><br>
+<h3>API data</h3>
+  <table
+    class="table table-responsive"
+    style="font-size: 15px; margin-top: 15px; position: absolute">
+    <th><b>Id</b></th>
+    <th><b>UserId</b></th>
+    <th><b>Title</b></th>
+    <th><b>Body</b></th>
+    <tr *ngFor="let item of data">
+      <td>{{ item.id }}</td>
+      <td>{{ item.userId }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.body }}</td>
+    </tr>
+  </table>
+</div>
